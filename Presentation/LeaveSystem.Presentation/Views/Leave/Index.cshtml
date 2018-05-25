@@ -1,0 +1,70 @@
+﻿@model IEnumerable<LeaveSystem.Presentation.Models.ManageLeaveViewModels.LeaveViewModel>
+
+@{
+    ViewData["Title"] = "Leave";
+}
+
+<div class="col-md-8 col-md-offset-2">
+    <h2>@ViewData["Title"]</h2>
+    <p>
+        <a asp-action="AddLeave">Create New</a>
+    </p>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Reason)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FromDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ToDate)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.NumberOfDays)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LeaveStatus.Name)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Reason)
+                    </td>
+                    <td>
+                        @item.FromDate.ToString("dd MMM yyyy")
+                    </td>
+                    <td>
+                        @*@Html.DisplayFor(modelItem => item.ToDate)*@
+                        @item.ToDate.ToString("dd MMM yyyy")
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NumberOfDays) Day(s)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LeaveStatus.Name)
+                    </td>
+
+                    <td>
+                        @if (item.StatusId == (int)LeaveStatusEnum.Pending)
+                        {
+                            @Html.ActionLink("Edit", "EditLeave", new { leaveId = item.Id }) 
+                            <span>|</span>
+                        }
+                        @Html.ActionLink("Details", "LeaveDetails", new { leaveId = item.Id })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+

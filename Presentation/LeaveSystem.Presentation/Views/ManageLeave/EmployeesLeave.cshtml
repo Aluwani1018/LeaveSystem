@@ -1,0 +1,72 @@
+﻿@model List<LeaveViewModel>
+@inject IEmployeeManager _employeeManager
+@{
+    ViewData["Title"] = "EmployeesLeave";
+    ViewData.AddActivePage(ManageLeaveNavPages.EmployeesLeave);
+}
+
+<h2>Employees Leave</h2>
+@Html.Partial("_StatusMessage", ViewData["results"]);
+<table class="table">
+    <thead>
+        <tr>
+            <td>
+                Employee
+            </td>
+            <td>
+                Reason
+            </td>
+            <td>
+                From Date
+            </td>
+            <td>
+                To Date
+            </td>
+            <td>
+                Number of days
+            </td>
+            <td>
+                Status
+            </td>
+            <td>
+                Actions
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var leave in Model)
+        {
+            <tr>
+                <td>@_employeeManager.GetEmployeeByIdAsync(leave.EmployeeId).Result.FirstName.ToString()</td>
+                <td>@leave.Reason</td>
+                <td>@leave.FromDate.ToString("dd MMM yyyy")</td>
+                <td>@leave.ToDate.ToString("dd MMM yyyy")</td>
+                <td>@leave.NumberOfDays (days)</td>
+                <td>@leave.LeaveStatus.Name</td>
+
+                @switch (leave.StatusId)
+                {
+                    case (int)LeaveStatusEnum.Pending:
+                        <td>
+                            <a href="@Url.Action("UpdateLeave", "ManageLeave", new { leaveId = leave.Id, leaveStatusEnum = LeaveStatusEnum.Approved })">Approve</a>
+                            <a href="@Url.Action("UpdateLeave", "ManageLeave", new { leaveId = leave.Id, leaveStatusEnum = LeaveStatusEnum.Rejected })">Reject</a>
+                        </td>
+                        break;
+                    case (int)LeaveStatusEnum.Cancelled:
+                        <td></td>
+                        break;
+                    default:
+                        <td><a href="@Url.Action("UpdateLeave", "ManageLeave", new { leaveId = leave.Id, leaveStatusEnum = LeaveStatusEnum.Cancelled })">Cancel</a></td>
+                        break;
+
+
+                }
+
+
+
+            </tr>
+
+        }
+    </tbody>
+</table>
+

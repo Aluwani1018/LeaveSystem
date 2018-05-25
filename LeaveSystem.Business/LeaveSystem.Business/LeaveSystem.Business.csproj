@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\LeaveSystem.Data\LeaveSystem.Data.Model\LeaveSystem.Data.Model.csproj" />
+    <ProjectReference Include="..\..\LeaveSystem.Data\LeaveSystem.Data\LeaveSystem.Data.csproj" />
+    <ProjectReference Include="..\..\LeaveSystem.Infrastructure\LeaveSystem.Infrastructure\LeaveSystem.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Data.SqlClient">
+      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\system.data.sqlclient\4.4.0\ref\netstandard2.0\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,47 @@
+﻿@model LeaveSystem.Presentation.Models.ManageLeaveViewModels.LeaveViewModel
+
+@{
+    ViewData["Title"] = "Leave Details";
+}
+
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <h4>@ViewData["Title"]</h4>
+        <hr />
+        @Html.Partial("_StatusMessage", ViewData["results"]);
+        @if (Model != null)
+        {
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Reason)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Reason)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.FromDate)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.FromDate.ToString("dd MMM yyyy"))
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ToDate)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ToDate.ToString("dd MMM yyyy"))
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.NumberOfDays)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.NumberOfDays)
+                </dd>
+            </dl>
+        }
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </div>
+
+</div>

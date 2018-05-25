@@ -1,0 +1,17 @@
+D:\Github Repos\LeaveSystem\LeaveSystem.Business\LeaveSystem.Business\bin\Debug\netcoreapp2.0\LeaveSystem.Business.deps.json
+D:\Github Repos\LeaveSystem\LeaveSystem.Business\LeaveSystem.Business\bin\Debug\netcoreapp2.0\LeaveSystem.Business.dll
+D:\Github Repos\LeaveSystem\LeaveSystem.Business\LeaveSystem.Business\bin\Debug\netcoreapp2.0\LeaveSystem.Business.pdb
+D:\Github Repos\LeaveSystem\LeaveSystem.Business\LeaveSystem.Business\bin\Debug\netcoreapp2.0\LeaveSystem.Data.dll
+D:\Github Repos\LeaveSystem\LeaveSystem.Business\LeaveSystem.Business\bin\Debug\netcoreapp2.0\LeaveSystem.Data.Model.dll
+D:\Github Repos\LeaveSystem\LeaveSystem.Business\LeaveSystem.Business\bin\Debug\netcoreapp2.0\LeaveSystem.Infrastructure.dll
+D:\Github Repos\LeaveSystem\LeaveSystem.Business\LeaveSystem.Business\bin\Debug\netcoreapp2.0\System.Data.SqlClient.dll
+D:\Github Repos\LeaveSystem\LeaveSystem.Business\LeaveSystem.Business\bin\Debug\netcoreapp2.0\LeaveSystem.Data.Model.pdb
+D:\Github Repos\LeaveSystem\LeaveSystem.Business\LeaveSystem.Business\bin\Debug\netcoreapp2.0\LeaveSystem.Data.pdb
+D:\Github Repos\LeaveSystem\LeaveSystem.Business\LeaveSystem.Business\bin\Debug\netcoreapp2.0\LeaveSystem.Infrastructure.pdb
+D:\Github Repos\LeaveSystem\LeaveSystem.Business\LeaveSystem.Business\bin\Debug\netcoreapp2.0\System.Data.SqlClient.xml
+D:\Github Repos\LeaveSystem\LeaveSystem.Business\LeaveSystem.Business\obj\Debug\netcoreapp2.0\LeaveSystem.Business.csprojResolveAssemblyReference.cache
+D:\Github Repos\LeaveSystem\LeaveSystem.Business\LeaveSystem.Business\obj\Debug\netcoreapp2.0\LeaveSystem.Business.csproj.CoreCompileInputs.cache
+D:\Github Repos\LeaveSystem\LeaveSystem.Business\LeaveSystem.Business\obj\Debug\netcoreapp2.0\LeaveSystem.Business.AssemblyInfoInputs.cache
+D:\Github Repos\LeaveSystem\LeaveSystem.Business\LeaveSystem.Business\obj\Debug\netcoreapp2.0\LeaveSystem.Business.AssemblyInfo.cs
+D:\Github Repos\LeaveSystem\LeaveSystem.Business\LeaveSystem.Business\obj\Debug\netcoreapp2.0\LeaveSystem.Business.dll
+D:\Github Repos\LeaveSystem\LeaveSystem.Business\LeaveSystem.Business\obj\Debug\netcoreapp2.0\LeaveSystem.Business.pdb

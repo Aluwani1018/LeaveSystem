@@ -1,0 +1,39 @@
+﻿@model LeaveSystem.Presentation.Models.ManageLeaveViewModels.CreateLeaveViewModel
+
+@{
+    ViewData["Title"] = "Create Leave";
+}
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <h4>@ViewData["Title"]</h4>
+        <hr />
+        @Html.Partial("_StatusMessage", ViewData["results"]);
+        <form asp-action="AddLeave">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Reason" class="control-label"></label>
+                <input asp-for="Reason" class="form-control" />
+                <span asp-validation-for="Reason" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FromDate" class="control-label"></label>
+                <input asp-for="FromDate" class="form-control" />
+                <span asp-validation-for="FromDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ToDate" class="control-label"></label>
+                <input asp-for="ToDate" class="form-control" />
+                <span asp-validation-for="ToDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+
+
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </div>
+</div>
+

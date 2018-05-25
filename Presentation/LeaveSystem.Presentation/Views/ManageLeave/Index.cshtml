@@ -1,0 +1,51 @@
+﻿@model List<LeaveViewModel>
+@{
+    ViewData["Title"] = "Manage Leave";
+    ViewData.AddActivePage(ManageLeaveNavPages.Index);
+}
+<h2>@ViewData["Title"]</h2>
+
+@if (Model.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <td>
+                    Reason
+                </td>
+                <td>
+                    From Date
+                </td>
+                <td>
+                    To Date
+                </td>
+                <td>
+                    Number of days
+                </td>
+                <td>
+                    Status
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var leave in Model)
+            {
+                <tr>
+                    <td>@leave.Reason</td>
+                    <td>@leave.FromDate.ToString("dd MMM yyyy")</td>
+                    <td>@leave.ToDate.ToString("dd MMM yyyy")</td>
+                    <td>@leave.NumberOfDays (days)</td>
+                    <td>@leave.LeaveStatus.Name</td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+
+}
+else
+{
+    <div>
+        <h3 class="text-danger">You haven't requested leave</h3>
+    </div>
+}

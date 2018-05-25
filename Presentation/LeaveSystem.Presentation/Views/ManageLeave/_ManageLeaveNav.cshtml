@@ -1,0 +1,8 @@
+﻿@using LeaveSystem.Presentation.Views.Manage
+@inject SignInManager<Employee> SignInManager
+
+<ul class="nav nav-pills nav-stacked">
+    <li class="@ManageLeaveNavPages.IndexNavClass(ViewContext)"><a asp-action="Index">My leave</a></li>
+    <li class="@ManageLeaveNavPages.EmployeesLeaveNavClass(ViewContext)"><a asp-action="EmployeesLeave">Employees Leave</a></li>
+</ul>
+
