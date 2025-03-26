@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
@@ -29,6 +29,20 @@ namespace LeaveSystem.Presentation
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+        /// <summary>
+        /// Configures the services for the application, including setting up
+        /// the database context, identity, dependency injection for various
+        /// managers and services, and initializing AutoMapper configuration.
+        /// </summary>
+        /// <param name="services">The IServiceCollection to add the services to.</param>
+        /// <example>
+        /// public void ConfigureServices(IServiceCollection services)
+        /// {
+        ///     // This will setup the database with SQL Server and configure
+        ///     // the application to use identity with custom roles and employees.
+        ///     ConfigureServices(services);
+        /// }
+        /// </example>
         public void ConfigureServices(IServiceCollection services)
         {
                 services.AddDbContext<ApplicationDbContext>(options =>
@@ -53,6 +67,18 @@ namespace LeaveSystem.Presentation
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// <summary>
+        /// Configures the application's request pipeline based on the hosting environment.
+        /// </summary>
+        /// <param name="app">An instance of <see cref="IApplicationBuilder"/> used to configure the application's request pipeline.</param>
+        /// <param name="env">An instance of <see cref="IHostingEnvironment"/> that provides information about the web hosting environment.</param>
+        /// <example>
+        /// // Example usage in the Startup class:
+        /// public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        /// {
+        ///     Configure(app, env);
+        /// }
+        /// </example>
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
