@@ -15,6 +15,14 @@ namespace LeaveSystem.Business.Tests
                 return Guid.NewGuid().ToString();
             }
         }
+        /// <summary>
+        /// Generates a mock Employee object with predefined details.
+        /// </summary>
+        /// <returns>An <see cref="Employee"/> object with specific preset properties such as ID, UserName, and Email.</returns>
+        /// <example>
+        /// var mockEmployee = GetMockEmployee();
+        /// Console.WriteLine(mockEmployee.UserName); // Output: "admin"
+        /// </example>
         public static Employee GetMockEmployee()
         {
             return new Employee
@@ -31,6 +39,17 @@ namespace LeaveSystem.Business.Tests
             };
         }
 
+        /// <summary>
+        /// Provides a mocked list of employee data for testing purposes.
+        /// </summary>
+        /// <returns>A <see cref="List{Employee}"/> containing pre-defined employee objects.</returns>
+        /// <example>
+        /// var mockedEmployees = GetListOfMockedEmployees();
+        /// foreach (var employee in mockedEmployees)
+        /// {
+        ///     Console.WriteLine($"{employee.FirstName} {employee.LastName} - {employee.Email}");
+        /// }
+        /// </example>
         public static List<Employee> GetListOfMockedEmployees()
         {
             return new List<Employee>()
@@ -64,6 +83,17 @@ namespace LeaveSystem.Business.Tests
             };
         }
 
+        /// <summary>
+        /// Retrieves a list of mocked leave records for testing purposes.
+        /// </summary>
+        /// <returns>An enumerable collection of mocked <c>Leave</c> objects.</returns>
+        /// <example>
+        /// var mockedLeaves = GetListOfMockedLeaves();
+        /// foreach (var leave in mockedLeaves)
+        /// {
+        ///     Console.WriteLine($"Leave ID: {leave.Id}, Status: {leave.LeaveStatus.Name}");
+        /// }
+        /// </example>
         public static IEnumerable<Leave> GetListOfMockedLeaves()
         {
             return new List<Leave>()
@@ -131,6 +161,28 @@ namespace LeaveSystem.Business.Tests
             };
         }
 
+        /// <summary>
+        /// Returns a list of mocked public holiday dates and names.
+        /// </summary>
+        /// <returns>A collection of <see cref="PublicHoliday"/> representing various public holidays in 2018.</returns>
+        /// <example>
+        /// foreach (var holiday in GetListOfMockedPublicHolidays())
+        /// {
+        ///     Console.WriteLine($"{holiday.Name}: {holiday.Date.ToShortDateString()}");
+        /// }
+        /// // Expected output:
+        /// // New Year's Day: 01/01/2018
+        /// // Human Right's Day: 21/03/2018
+        /// // Good Friday: 30/03/2018
+        /// // Family Day: 02/04/2018
+        /// // Freedom Day: 27/04/2018
+        /// // Labour Day: 01/05/2018
+        /// // National Womans Day: 09/08/2018
+        /// // Heritage Day: 24/09/2018
+        /// // Day of Reconciliation: 16/12/2018
+        /// // Christmas Day: 25/12/2018
+        /// // Day of Good Will: 26/12/2018
+        /// </example>
         public static IEnumerable<PublicHoliday> GetListOfMockedPublicHolidays()
         {
             return new List<PublicHoliday>()
@@ -193,6 +245,16 @@ namespace LeaveSystem.Business.Tests
             };
         }
 
+        /// <summary>
+        /// Creates and returns a mocked Leave object with predefined attributes.
+        /// </summary>
+        /// <returns>A mocked Leave object with default values set for testing purposes.</returns>
+        /// <example>
+        /// var leave = GetMockedLeaveToAdd();
+        /// Console.WriteLine(leave.EmployeeId); // Outputs the default employee ID
+        /// Console.WriteLine(leave.FromDate); // Outputs: 12/02/2018 00:00:00
+        /// Console.WriteLine(leave.ToDate); // Outputs: 15/02/2018 00:00:00
+        /// </example>
         public static Leave GetMockedLeaveToAdd()
         {
             return new Leave()
