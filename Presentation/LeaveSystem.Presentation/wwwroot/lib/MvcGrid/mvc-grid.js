@@ -26,8 +26,8 @@ var MvcGrid = (function () {
             'Text': new MvcGridTextFilter(),
             'Date': new MvcGridDateFilter(),
             'Number': new MvcGridNumberFilter(),
-            'Boolean': new MvcGridBooleanFilter()
-        }, options.filters);
+            'Boolean': new MvcGridBooleanFilter),
+        }}, options.filters);
 
         if (this.sourceUrl) {
             var splitIndex = this.sourceUrl.indexOf('?');
@@ -62,8 +62,8 @@ var MvcGrid = (function () {
                 currentPage: pager.find('li.active').data('page') || 0,
                 rowsPerPage: pager.find('.mvc-grid-pager-rows'),
                 pages: pager.find('li:not(.disabled)'),
-                element: pager
-            };
+                element:pager,
+            }};
         }
 
         this.bindPager();
@@ -84,20 +84,20 @@ var MvcGrid = (function () {
                     name: header.data('filter-name') || '',
                     first: {
                         type: header.data('filter-first-type') || '',
-                        val: header.data('filter-first-val') || ''
-                    },
+                        val: header.data('filter-first-val') ||'',
+                    }},
                     second: {
                         type: header.data('filter-second-type') || '',
-                        val: header.data('filter-second-val') || ''
-                    }
+                        val: header.data('filter-second-val') ||'',
+                    }}
                 };
             }
 
             if (header.data('sort') == 'True') {
                 column.sort = {
                     firstOrder: header.data('sort-first') || '',
-                    order: header.data('sort-order') || ''
-                }
+                    order: header.data('sort-order') ||'',
+                }}
             }
 
             return column;
@@ -201,8 +201,8 @@ var MvcGrid = (function () {
                     cache: false,
                     data: grid.data,
                     type: grid.requestType,
-                    url: grid.sourceUrl + '?' + grid.query
-                }).done(function (result) {
+                    url: grid.sourceUrl + '?' + gridquery,
+                }}).done(function (result) {
                     grid.element.hide();
                     grid.element.after(result);
 
@@ -216,8 +216,8 @@ var MvcGrid = (function () {
                         filters: grid.filters,
                         query: grid.query,
                         data: grid.data,
-                        isLoaded: true
-                    }).data('mvc-grid');
+                        isLoaded:true,
+                    }}).data('mvc-grid');
                     grid.element.remove();
 
                     newGrid.element.trigger('reloadEnded', [newGrid]);
@@ -385,8 +385,8 @@ var MvcGrid = (function () {
         },
         clean: function () {
             this.element.removeAttr('data-source-url');
-        }
-    };
+       },
+    }};
 
     return MvcGrid;
 })();
@@ -481,8 +481,8 @@ var MvcGridTextFilter = (function () {
                     grid.reload();
                 }
             });
-        }
-    };
+       },
+    }};
 
     return MvcGridTextFilter;
 })();
@@ -599,8 +599,8 @@ var MvcGridNumberFilter = (function () {
             var pattern = new RegExp('^(?=.*\\d+.*)[-+]?\\d*[.,]?\\d*$');
 
             return pattern.test(value);
-        }
-    };
+       },
+    }};
 
     return MvcGridNumberFilter;
 })();
@@ -699,8 +699,8 @@ var MvcGridDateFilter = (function () {
                     grid.reload();
                 }
             });
-        }
-    };
+       },
+    }};
 
     return MvcGridDateFilter;
 })();
@@ -781,8 +781,8 @@ var MvcGridBooleanFilter = (function () {
                     grid.reload();
                 }
             });
-        }
-    };
+       },
+    }};
 
     return MvcGridBooleanFilter;
 })();
@@ -840,37 +840,37 @@ $.fn.mvcgrid.lang = {
         Equals: 'Equals',
         NotEquals: 'Not equals',
         StartsWith: 'Starts with',
-        EndsWith: 'Ends with'
-    },
+        EndsWith:'Ends with',
+    }},
     Number: {
         Equals: 'Equals',
         NotEquals: 'Not equals',
         LessThan: 'Less than',
         GreaterThan: 'Greater than',
         LessThanOrEqual: 'Less than or equal',
-        GreaterThanOrEqual: 'Greater than or equal'
-    },
+        GreaterThanOrEqual:'Greater than or equal',
+    }},
     Date: {
         Equals: 'Equals',
         NotEquals: 'Not equals',
         LessThan: 'Is before',
         GreaterThan: 'Is after',
         LessThanOrEqual: 'Is before or equal',
-        GreaterThanOrEqual: 'Is after or equal'
-    },
+        GreaterThanOrEqual:'Is after or equal',
+    }},
     Boolean: {
         Yes: 'Yes',
-        No: 'No'
-    },
+        No:'No',
+    }},
     Filter: {
         Apply: '&#10004;',
-        Remove: '&#10008;'
-    },
+        Remove:'&#10008;',
+    }},
     Operator: {
         Select: '',
         And: 'and',
-        Or: 'or'
-    }
+        Or:'or',
+    }}
 };
 $(function () {
     $('body').append('<div class="mvc-grid-popup"></div>');
